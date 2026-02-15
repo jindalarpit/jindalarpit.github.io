@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arpit Jindal — Resume</title>
+  <meta name="description"
+    content="Resume of Arpit Jindal — Senior Architect with 16 years experience in Microservices, AWS, Kubernetes, Spring Boot.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      color: #1a1a1a;
+      background: #f3f1ea;
+      line-height: 1.4;
+      font-size: 11px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top bar - hidden on print */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 249, 245, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #e8e6dc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .topbar-left a {
+      color: #0d7377;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .topbar-left a:hover {
+      color: #14919b;
+    }
+
+    .topbar-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #0d7377 0%, #14919b 100%);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 2px 12px rgba(13, 115, 119, 0.25);
+    }
+
+    .btn-download:hover {
+      background: linear-gradient(135deg, #14919b 0%, #0d7377 100%);
+    }
+
+    /* Resume container */
+    .resume-wrapper {
+      max-width: 800px;
+      margin: 70px auto 40px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .resume {
+      padding: 32px 40px;
+    }
+
+    /* Header - ATS friendly single column */
+    .r-header {
+      text-align: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #0d7377;
+    }
+
+    .r-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0d7377;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .r-title {
+      font-size: 12px;
+      color: #14919b;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .r-contact {
+      font-size: 10px;
+      color: #333;
+    }
+
+    .r-contact span {
+      margin: 0 8px;
+    }
+
+    .r-contact a {
+      color: #0d7377;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Section headings - ATS standard */
+    .r-section {
+      margin-top: 14px;
+    }
+
+    .r-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #0d7377 0%, #14919b 100%);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+
+    /* Summary - keyword rich */
+    .r-summary {
+      font-size: 10.5px;
+      color: #333;
+      line-height: 1.45;
+      text-align: justify;
+    }
+
+    /* Experience - clean format */
+    .r-job {
+      margin-bottom: 10px;
+      padding-left: 8px;
+      border-left: 2px solid #e0f2f3;
+    }
+
+    .r-job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .r-job-role {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .r-job-date {
+      font-size: 10px;
+      color: #0d7377;
+      font-weight: 500;
+    }
+
+    .r-job-company {
+      font-size: 10px;
+      color: #14919b;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .r-job-details {
+      list-style: disc;
+      margin-left: 16px;
+    }
+
+    .r-job-details li {
+      font-size: 10px;
+      color: #333;
+      line-height: 1.4;
+      margin-bottom: 1px;
+    }
+
+    /* Skills - single line keywords */
+    .r-skills {
+      font-size: 10px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .r-skills strong {
+      color: #0d7377;
+    }
+
+    /* Education & Certs - compact */
+    .r-edu-grid {
+      display: flex;
+      gap: 40px;
+    }
+
+    .r-edu-col {
+      flex: 1;
+    }
+
+    .r-edu {
+      margin-bottom: 6px;
+    }
+
+    .r-edu-degree {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .r-edu-school {
+      font-size: 10px;
+      color: #14919b;
+    }
+
+    .r-cert {
+      font-size: 10px;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    /* Print styles - ONE PAGE */
+    @media print {
+      @page {
+        margin: 0.4in;
+        size: letter;
+      }
+
+      body {
+        background: #fff;
+        font-size: 10px;
+      }
+
+      .topbar {
+        display: none !important;
+      }
+
+      .resume-wrapper {
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+      }
+
+      .resume {
+        padding: 0;
+      }
+
+      .r-header {
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+      }
+
+      .r-name {
+        font-size: 18px;
+      }
+
+      .r-section {
+        margin-top: 10px;
+      }
+
+      .r-section-title {
+        font-size: 10px;
+        margin-bottom: 4px;
+      }
+
+      .r-job {
+        margin-bottom: 8px;
+      }
+
+      .r-job-details li {
+        font-size: 9.5px;
+      }
+
+      .r-summary {
+        font-size: 10px;
+      }
+
+      .r-skills {
+        font-size: 9.5px;
+      }
+
+      /* Ensure 2-column layout for Education in print */
+      .r-edu-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 30px !important;
+      }
+
+      .r-edu-col {
+        flex: 1 !important;
+      }
+
+      .r-edu-degree,
+      .r-cert {
+        font-size: 9.5px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .resume {
+        padding: 24px 20px;
+      }
+
+      .r-edu-grid {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .topbar-title {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="index.html">&larr; Back to Portfolio</a>
+      <span class="topbar-title">Resume — Arpit Jindal</span>
+    </div>
+    <button class="btn-download" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+      Save as PDF
+    </button>
+  </div>
+
+  <!-- Resume -->
+  <div class="resume-wrapper">
+    <div class="resume">
+
+      <!-- Header -->
+      <div class="r-header">
+        <h1 class="r-name">Arpit Jindal</h1>
+        <p class="r-title">Senior Architect | Microservices | AWS | Kubernetes | Spring Boot</p>
+        <div class="r-contact">
+          <span>+91-9958198335</span> |
+          <a href="mailto:jindalarpit@gmail.com">jindalarpit@gmail.com</a> |
+          <span>Noida, India</span> |
+          <a href="https://www.linkedin.com/in/jindalarpit/">LinkedIn</a> |
+          <a href="https://medium.com/@jindalarpit">Medium</a>
+        </div>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="r-section">
+        <h2 class="r-section-title">Professional Summary</h2>
+        <p class="r-summary">
+          Senior Architect with <strong>16 years</strong> of experience designing scalable, secure, high-performance
+          system
+          architectures. Proven track record aligning technical strategy with business goals. Expert in
+          <strong>Microservices
+            Architecture</strong> using <strong>Spring Boot</strong> and <strong>Kotlin</strong>. Proficient in
+          <strong>AWS</strong> cloud services (EKS, MSK, EC2), <strong>Kubernetes</strong>,
+          <strong>Istio</strong>, <strong>Docker</strong>. Strong security focus with <strong>OAuth</strong>,
+          <strong>Spring Security</strong>, <strong>OWASP Top 10</strong>. Experienced in cloud cost
+          optimization, <strong>CI/CD</strong> automation, and technical leadership.
+        </p>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="r-section">
+        <h2 class="r-section-title">Technical Skills</h2>
+        <p class="r-skills">
+          <strong>Languages & Frameworks:</strong> Java, J2EE, Spring Boot, Spring Security, Kotlin, REST APIs,
+          GraphQL<br>
+          <strong>Cloud & DevOps:</strong> AWS (EKS, MSK, EC2, S3), Kubernetes, Docker, Istio, Terraform, Helm, CI/CD,
+          Packer<br>
+          <strong>Data & Messaging:</strong> Kafka, MongoDB, Redis, PostgreSQL, MySQL<br>
+          <strong>Security:</strong> OAuth2, OIDC, Keycloak, OWASP Top 10, SAST, DAST, RASP, Zero Trust Architecture<br>
+          <strong>Observability:</strong> OpenTracing, ELK Stack, EFK Stack, Grafana, Prometheus
+        </p>
+      </div>
+
+      <!-- Professional Experience -->
+      <div class="r-section">
+        <h2 class="r-section-title">Professional Experience</h2>
+
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-role">Senior Architect</span>
+            <span class="r-job-date">Jan 2021 – Present</span>
+          </div>
+          <p class="r-job-company">SBS Software, Noida, India</p>
+          <ul class="r-job-details">
+            <li>Lead Architect for <strong>Digital Banking Suite</strong> and <strong>Open Banking Integration</strong>
+              serving global banking clients</li>
+            <li>Leading AI strategy for engineering; implemented <strong>Agentic AI</strong> system with
+              <strong>RAG</strong> achieving <strong>20%</strong> efficiency improvement
+            </li>
+            <li>Drove <strong>Microservices</strong> best practices (contract testing, observability, feature flags)
+              achieving <strong>60%</strong> reduction in time-to-market</li>
+            <li>Lowered Total Cost of Ownership by <strong>40%</strong> through standardized tooling across
+              microservices</li>
+          </ul>
+        </div>
+
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-role">Consultant Architect</span>
+            <span class="r-job-date">May 2018 – Jan 2021</span>
+          </div>
+          <p class="r-job-company">SBS Software, Noida, India</p>
+          <ul class="r-job-details">
+            <li>Designed <strong>Sopra Banking Cloud Platform (SBCP)</strong> using <strong>Kubernetes</strong>,
+              <strong>Istio</strong>, <strong>MongoDB</strong>, <strong>Kafka</strong>
+            </li>
+            <li>Increased automation through <strong>Terraform</strong>, <strong>Helm</strong>, <strong>CI/CD</strong>
+              achieving <strong>80%</strong> reduction in provisioning time</li>
+            <li>Championed continuous improvement by identifying and integrating new tools and technologies</li>
+          </ul>
+        </div>
+
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-role">Solution Architect / Senior Software Engineer</span>
+            <span class="r-job-date">Jul 2014 – May 2018</span>
+          </div>
+          <p class="r-job-company">Ericsson, Noida, India</p>
+          <ul class="r-job-details">
+            <li>Technical Lead for <strong>Ericsson Mobile Financial Services</strong> platform serving
+              <strong>10M+</strong> users across multiple regions
+            </li>
+            <li>Architected <strong>RESTful APIs</strong> and <strong>API Gateway</strong> solutions cutting
+              integration time by <strong>35%</strong> for banking partners</li>
+            <li>Managed <strong>5+</strong> enterprise client accounts; delivered solutions <strong>25%</strong> ahead
+              of schedule through effective scoping</li>
+            <li>Conducted <strong>50+</strong> solution demonstrations achieving <strong>95%</strong> client
+              satisfaction rate</li>
+          </ul>
+        </div>
+
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-role">Application Developer</span>
+            <span class="r-job-date">Feb 2013 – Jul 2014</span>
+          </div>
+          <p class="r-job-company">Oracle, Hyderabad, India</p>
+          <ul class="r-job-details">
+            <li>Developed <strong>15+</strong> features for Project Management module in <strong>Oracle Fusion
+                Applications</strong> used by Fortune 500 clients</li>
+            <li>Decreased module integration time by <strong>30%</strong> through optimized Deliverables module
+              integration</li>
+            <li>Improved project tracking efficiency by <strong>20%</strong> through enhanced workflow automation</li>
+          </ul>
+        </div>
+
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-role">Project Engineer</span>
+            <span class="r-job-date">Feb 2010 – Feb 2013</span>
+          </div>
+          <p class="r-job-company">Wipro, Pune, India</p>
+          <ul class="r-job-details">
+            <li>Developed <strong>Java/J2EE</strong> application for SFR network request management; designed workflow
+              using W4 Studio</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education & Certifications -->
+      <div class="r-section">
+        <h2 class="r-section-title">Education & Certifications</h2>
+        <div class="r-edu-grid">
+          <div class="r-edu-col">
+            <div class="r-edu">
+              <p class="r-edu-degree">M.Tech, Software Systems – BITS Pilani (GPA: 8.9/10)</p>
+            </div>
+            <div class="r-edu">
+              <p class="r-edu-degree">B.Tech, Information Technology – MIET, UPTU (79%)</p>
+            </div>
+          </div>
+          <div class="r-edu-col">
+            <p class="r-cert">• AWS Certified Solutions Architect – Professional (2025)</p>
+            <p class="r-cert">• AWS Certified Solutions Architect – Associate (2025)</p>
+            <p class="r-cert">• TOGAF 9 Practitioner – The Open Group (2018)</p>
+            <p class="r-cert">• OCA Java SE 7 – Oracle (2015)</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
